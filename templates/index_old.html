@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+ <img src="http://siglerdev.us/photoupload/2018_05_21_03_14_48.png" alt="FREDANZAXAN"> 
+<head>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/slider.css') }}">
+</head>
+<title>Hello from Flask</title>
+{% if color %}
+  <h1>Hello {{ color }}!</h1>
+{% else %}
+  <h1>Hello, World!</h1>
+{% endif %}
+
+<form method="post" action="/">
+    <input type="submit" value="Turn off lights" name="off"/>
+</form>
+ <form method="post" action="/">
+  Color:<br>
+  <input type="color" name="rgb_color" value={{ color }}>
+  <input type="submit" value="Submit">
+</form> 
+ <form method="post" action="/">
+  Timer (minutes):<br>
+  <input type="text" name="timer" value="0">
+  <input type="submit" value="Submit">
+  {% if alarm %}
+      <h2>Current Timer: {{ alarm }}
+  {% endif %}
+</form>
+
+<form method="post" action="/" id="slider">
+<div class="slidecontainer">
+  <input type="range" min="1" max="255" value="{{ brightness }}" class="slider" id="myRange" name="slider">
+  <p>Value: <span id="demo"></span></p>
+</div>
+</form>
+
+<form method = "post" action = "/">
+	Choose first color: <input type = "color" name = "Color1" value = {{ color }}> <br>
+	Choose second color: <input type = "color" name = "Color2" value = {{ color }}> <br>
+	<input type = "submit" value = "Pattern" name = "pattern"/> <br> <br>
+</form>
+	
+
+<form method="post" action="/">
+    <input type="submit" value="Theater Chase" name="theaterChase"/>
+    <input type="submit" value="Rainbow Cycle" name="rainbowCycle"/>
+    <input type="submit" value="Color Return" name="colorReturn"/>
+    <input type="submit" value="Strobe" name="strobe"/>
+    <!-- <input type="submit" value="Pattern" name="pattern"/> -->
+    <input type="submit" value="Sequence Fill" name="sequenceFill"/>    
+    <input type="submit" value="Random" name="random"/>  
+    <input type="submit" value="Breathe" name="breathe"/>  
+    <input type="submit" value="Middle Fill" name="middleFill"/>      
+    
+</form>
+<form method="get" action="/">
+    <input type="submit" value="Off 2" name="off2"/>
+    
+</form>
+
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+
+slider.onmouseup = function () {
+  document.getElementById("myRange").value = slider.value;
+  document.getElementById("slider").submit();
+}
+
+slider.addEventListener('touchend', function(){
+  document.getElementById("myRange").value = slider.value;
+  document.getElementById("slider").submit();
+})
+
+
+</script>
+
+</html>
+<!--
+
+Add the delayed timer to turn off
+Have a schedule that turns the lights on at a specific time in the morning during days of the week
+Add the music playing stuff
+
+

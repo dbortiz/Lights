@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+<head>
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/slider.css') }}">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/rangeslider.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/light_inputSelection.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/light_inputSelection.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/rangeslider.min.js') }}"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<img class="img-fluid" src="http://siglerdev.us/photoupload/2018_05_21_03_14_48.png" alt="FREDANZAXAN">
+<form name="lights" method="post" action="/">
+
+    <button type="button" class="btn btn-info" id="resetFields">Reset Colors</button>
+    <!--  Color Selection -->
+    <div class="row">
+        <div class="form-group col-lg-3">
+            <label>Color One:</label>
+            <select class="custom-select" id="color_me1" name="color1">
+                <option disabled selected value> -- select color -- </option>
+                <option value="800000" style="background-color:#800000">Maroon</option>
+                <option value="FF0000" style="background-color:#FF0000">Red</option>
+                <option value="FFA500" style="background-color:#FFA500">Orange</option>
+                <option value="FFFF00" style="background-color:#FFFF00">Yellow</option>
+                <option value="808000" style="background-color:#808000">Olive</option>
+                <option value="008000" style="background-color:#008000">Green</option>
+                <option value="800080" style="background-color:#800080">Purple</option>
+                <option value="FF00FF" style="background-color:#FF00FF">Fuchsia</option>
+                <option value="00FF00" style="background-color:#00FF00">Lime</option>
+                <option value="008080" style="background-color:#008080">Teal</option>
+                <option value="00FFFF" style="background-color:#00FFFF">Aqua</option>
+                <option value="0000FF" style="background-color:#0000FF">Blue</option>
+                <option value="000080" style="background-color:#000080">Navy</option>
+                <option value="808080" style="background-color:#808080">Gray</option>
+                <option value="FFFFFF" style="background-color:#FFFFFF">White</option>
+                <option value="000000" style="background-color:#000000">Black</option>
+            </select>
+        </div>
+        <div class="form-group col-lg-3">
+            <label>Color Two:</label>
+            <select class="custom-select" id="color_me2" name="color2">
+                <option disabled selected value> -- select color -- </option>
+                <option value="800000" style="background-color:#800000">Maroon</option>
+                <option value="FF0000" style="background-color:#FF0000">Red</option>
+                <option value="FFA500" style="background-color:#FFA500">Orange</option>
+                <option value="FFFF00" style="background-color:#FFFF00">Yellow</option>
+                <option value="808000" style="background-color:#808000">Olive</option>
+                <option value="008000" style="background-color:#008000">Green</option>
+                <option value="800080" style="background-color:#800080">Purple</option>
+                <option value="FF00FF" style="background-color:#FF00FF">Fuchsia</option>
+                <option value="00FF00" style="background-color:#00FF00">Lime</option>
+                <option value="008080" style="background-color:#008080">Teal</option>
+                <option value="00FFFF" style="background-color:#00FFFF">Aqua</option>
+                <option value="0000FF" style="background-color:#0000FF">Blue</option>
+                <option value="000080" style="background-color:#000080">Navy</option>
+                <option value="808080" style="background-color:#808080">Gray</option>
+                <option value="FFFFFF" style="background-color:#FFFFFF">White</option>
+                <option value="000000" style="background-color:#000000">Black</option>
+            </select>
+        </div>
+        <div class="form-group col-lg-3">
+            <label>Color Three:</label>
+            <select class="custom-select" id="color_me3" name="color3">
+                <option disabled selected value> -- select color -- </option>
+                <option value="800000" style="background-color:#800000">Maroon</option>
+                <option value="FF0000" style="background-color:#FF0000">Red</option>
+                <option value="FFA500" style="background-color:#FFA500">Orange</option>
+                <option value="FFFF00" style="background-color:#FFFF00">Yellow</option>
+                <option value="808000" style="background-color:#808000">Olive</option>
+                <option value="008000" style="background-color:#008000">Green</option>
+                <option value="800080" style="background-color:#800080">Purple</option>
+                <option value="FF00FF" style="background-color:#FF00FF">Fuchsia</option>
+                <option value="00FF00" style="background-color:#00FF00">Lime</option>
+                <option value="008080" style="background-color:#008080">Teal</option>
+                <option value="00FFFF" style="background-color:#00FFFF">Aqua</option>
+                <option value="0000FF" style="background-color:#0000FF">Blue</option>
+                <option value="000080" style="background-color:#000080">Navy</option>
+                <option value="808080" style="background-color:#808080">Gray</option>
+                <option value="FFFFFF" style="background-color:#FFFFFF">White</option>
+                <option value="000000" style="background-color:#000000">Black</option>
+            </select>
+        </div>
+        <div class="form-group col-lg-3">
+            <label>Color Four:</label>
+            <select class="custom-select" id="color_me4" name="color4">
+                <option disabled selected value> -- select color -- </option>
+                <option value="800000" style="background-color:#800000">Maroon</option>
+                <option value="FF0000" style="background-color:#FF0000">Red</option>
+                <option value="FFA500" style="background-color:#FFA500">Orange</option>
+                <option value="FFFF00" style="background-color:#FFFF00">Yellow</option>
+                <option value="808000" style="background-color:#808000">Olive</option>
+                <option value="008000" style="background-color:#008000">Green</option>
+                <option value="800080" style="background-color:#800080">Purple</option>
+                <option value="FF00FF" style="background-color:#FF00FF">Fuchsia</option>
+                <option value="00FF00" style="background-color:#00FF00">Lime</option>
+                <option value="008080" style="background-color:#008080">Teal</option>
+                <option value="00FFFF" style="background-color:#00FFFF">Aqua</option>
+                <option value="0000FF" style="background-color:#0000FF">Blue</option>
+                <option value="000080" style="background-color:#000080">Navy</option>
+                <option value="808080" style="background-color:#808080">Gray</option>
+                <option value="FFFFFF" style="background-color:#FFFFFF">White</option>
+                <option value="000000" style="background-color:#000000">Black</option>
+            </select>
+        </div>
+
+    </div>
+    <div class="slidecontainer">
+        <input type="range" min="1" max="255" value="{{ brightness }}" name="slider" id="slider" oninput="updateBrightness(this.value)">
+    </div>
+    <br> <br> <br>
+    <input type="submit" class="btn btn-danger btn-lg" value="Stop Lights" name="STOP_ALL_LIGHTS" />
+    <br> <br> <br>
+    <!--  Mode Selection -->
+    {% for n in range(modeRNames|length) %}
+    <input type="submit" class="btn btn-outline-primary" value="{{ modeHNames[n] }}" name="{{ modeRNames[n] }}"/>
+    {% endfor %}
+
+</form>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/rangeslider.min.js') }}"></script>
+<script>
+
+    function updateBrightness(val){
+        $.post($(this).attr('action'), "BRIGHTNESS_UPDATE="+val, function(res){
+            //console.log(res);
+        });
+    }
+
+    $('input[type="range"]').rangeslider({
+        polyfill : false,
+        onInit : function() {
+            this.output = $( '<div class="range-output" />' ).insertAfter( this.$range ).html( this.$element.val() );
+        },
+        onSlide : function( position, value ) {
+            this.output.html( value );
+        }
+    });
+
+ $("form input[type=submit]").click(function() {
+        $("input[type=submit]", $(this).parents("form")).removeAttr("clicked");
+        $(this).attr("clicked", "true");
+    });
+
+    $('form[name=lights]').submit(function(){
+        var val = $("input[type=submit][clicked=true]").attr("name");
+        var serial = $(this).serialize();
+        if (serial === "")
+            serial = val+"="+val;
+        else
+            serial += "&"+val+"="+val;
+        $.post($(this).attr('action'), serial, function(res){
+            //console.log(res);
+        });
+        return false;
+
+    });
+
+    $('#resetFields').click(function(){
+        $('#color_me1').prop('selectedIndex',0).css("background-color", "white");
+        $('#color_me2').prop('selectedIndex',0).css("background-color", "white");
+        $('#color_me3').prop('selectedIndex',0).css("background-color", "white");
+        $('#color_me4').prop('selectedIndex',0).css("background-color", "white");
+    });
+
+    $("#color_me1").change(function(){
+        var selectedOption = this.selectedOptions[0]
+        var color = selectedOption.style.backgroundColor
+        $("#color_me1").css("background-color", color);
+    });
+    $("#color_me2").change(function(){
+        var selectedOption = this.selectedOptions[0]
+        var color = selectedOption.style.backgroundColor
+        $("#color_me2").css("background-color", color);
+    });
+    $("#color_me3").change(function(){
+        var selectedOption = this.selectedOptions[0]
+        var color = selectedOption.style.backgroundColor
+        $("#color_me3").css("background-color", color);
+    });
+    $("#color_me4").change(function(){
+        var selectedOption = this.selectedOptions[0]
+        var color = selectedOption.style.backgroundColor
+        $("#color_me4").css("background-color", color);
+    });
+
+</script>
+
