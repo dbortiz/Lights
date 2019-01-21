@@ -13,7 +13,7 @@ pyasn1==0.1.9
 pycrypto==2.6.1
 pygobject==3.22.0
 pyinotify==0.9.6
-pyOpenSSL==16.2.0
+pyOpenSSL==17.5.0
 python-apt==1.1.0b5
 pyxdg==0.25
 rpi-ws281x==3.1.0
